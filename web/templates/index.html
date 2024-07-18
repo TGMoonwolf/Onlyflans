@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    {% include "headbase.html" %}
+</head>
+<body>
+
+    {% include "base.html" %}
+
+    <div class="container mt-5">
+        <div class="row">
+            {% for flan in flans %}
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm" style="width: 18rem;">
+                        <img src="{{ flan.image_url }}" class="card-img-top" alt="{{ flan.name }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ flan.name }}</h5>
+                            <p class="card-text">{{ flan.description }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+    <div class="container"> {% include "footer.html" %} </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
